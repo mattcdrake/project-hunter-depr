@@ -12,8 +12,19 @@ const TestQuests: Quest[] = [
 
 function App() {
   return (
-    <div className="App px-8">
-      <QuestsPane quests={TestQuests} />
+    <div className="App px-8 flex space-x-4">
+      {/* Left side of the app */}
+      <div className="flex-1 border-4 border-black w-5/12">
+        <QuestsPane quests={TestQuests} />
+        <div className="border border-black">
+          Criteria Pane
+        </div>
+      </div>
+
+      {/* Right side of the app */}
+      <div className="flex-1 border-4 border-black w-5/12">
+        Info Pane
+      </div>
     </div>
   );
 }
