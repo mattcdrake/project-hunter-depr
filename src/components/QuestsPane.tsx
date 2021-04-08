@@ -12,17 +12,19 @@ interface QuestsPaneProps {
  */
 function QuestsPane(props: QuestsPaneProps) {
   return (
-    <div className="border border-black p-4">
+    <div className="p-4">
       <p className="px-4 text-2xl">Assigned</p>
-      <div className="border border-black">
+      <ul>
         {props.quests.map((quest) => (
+          <li>
             <QuestSlug
               questName={quest.name}
               dueDate={quest.dueDate}
               difficulty={quest.difficulty}
-          />
+            />
+          </li>
           ))}
-      </div>
+      </ul>
     </div>  
   );
 };
