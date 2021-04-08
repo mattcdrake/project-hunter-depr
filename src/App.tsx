@@ -1,12 +1,19 @@
 import React from 'react';
 
-import TasksPane from './components/TasksPane';
+import { Quest } from './types/Quest';
+import QuestsPane from './components/QuestsPane';
+
+// @dev Test data
+const TestQuests: Quest[] = [
+  {name: "Do laundry", dueDate: new Date(), difficulty: 5},
+  {name: "Watch baseball", dueDate: new Date(), difficulty: 2},
+  {name: "Get a job", dueDate: new Date(), difficulty: 8},
+];
 
 function App() {
   return (
     <div className="App px-8">
-      <p className="px-4 text-2xl">Assigned</p>
-      <TasksPane />
+      <QuestsPane quests={TestQuests} />
     </div>
   );
 }

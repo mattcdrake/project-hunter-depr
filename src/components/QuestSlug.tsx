@@ -1,18 +1,18 @@
 import React from 'react';
 
-interface TaskProps {
-  taskName: string;
+interface QuestSlugProps {
+  questName: string;
   dueDate: Date;
   difficulty: number;
 };
 
 /*
- * Displays the header info of a single task.
+ * Displays the header info of a single quest.
  */
-function Task(props: TaskProps) {
+function QuestSlug(props: QuestSlugProps) {
   return (
     <div className="border border-black max-w-full flex justify-between">
-      <span className="px-2">{props.taskName}</span>
+      <span className="px-2">{props.questName}</span>
       <span className="space-x-4 px-2">
         <span>{props.dueDate.toDateString()}</span>
         <span>★{props.difficulty}</span>
@@ -21,7 +21,6 @@ function Task(props: TaskProps) {
   );
 };
 
-export { Task} ;
-
-export type { TaskProps };
+export { QuestSlug } ;
+export type { QuestSlugProps };
 
