@@ -1,16 +1,12 @@
 import React from 'react';
 
-import Task from './components/task';
+import TasksPane from './components/TasksPane';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          This is some text.
-        </p>
-        <Task />
-      </header>
+    <div className="App px-8">
+      <p className="px-4 text-2xl">Assigned</p>
+      <TasksPane />
     </div>
   );
 }
