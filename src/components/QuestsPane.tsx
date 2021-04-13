@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import { Quest } from '../types/Quest';
-import { QuestSlug } from './QuestSlug';
+import { Quest } from "../types/Quest";
+import { QuestSlug } from "./QuestSlug";
 
-interface QuestsPaneProps {
+interface IProps {
   quests: Quest[];
-};
+  toggleQuestModal: () => void;
+}
 
 /*
  * Contains all of the quest slugs. Top-left part of the screen on PC.
  */
-function QuestsPane(props: QuestsPaneProps) {
+function QuestsPane(props: IProps) {
   return (
     <div className="p-4">
       <p className="px-4 text-2xl">Assigned</p>
@@ -23,10 +24,16 @@ function QuestsPane(props: QuestsPaneProps) {
               difficulty={quest.difficulty}
             />
           </li>
-          ))}
+        ))}
+        <li
+          className="border border-black max-w-full mx-auto text-center"
+          onClick={() => props.toggleQuestModal()}
+        >
+          Add a quest
+        </li>
       </ul>
-    </div>  
+    </div>
   );
-};
+}
 
 export default QuestsPane;
